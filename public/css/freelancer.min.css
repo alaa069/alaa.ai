@@ -24,7 +24,7 @@ hr.star-dark:after{color:#2c3e50;background-color:#fff}section{padding:6rem 0}se
 header.masthead h1{font-size:3rem;line-height:3rem}header.masthead h2{font-size:1.3rem;font-family:Lato}@media (min-width:992px){header.masthead{padding-top:calc(6rem + 106px);padding-bottom:6rem}
 header.masthead h1{font-size:4.75em;line-height:4rem}header.masthead h2{font-size:1.75em}}.portfolio{margin-bottom:-15px}
 .portfolio .portfolio-item{position:relative;display:block;max-width:25rem;margin-bottom:15px}
-.portfolio .portfolio-item .portfolio-item-caption{-webkit-transition:all ease .5s;-moz-transition:all ease .5s;transition:all ease .5s;opacity:0;background-color:rgba(24,188,156,.9)}
+.portfolio .portfolio-item .portfolio-item-caption{-webkit-transition:all ease .5s;-moz-transition:all ease .5s;transition:all ease .5s;opacity:0;background-color:rgba(15, 151, 205, 0.24);}
 .portfolio .portfolio-item .portfolio-item-caption:hover{opacity:1}
 .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content{font-size:1.5rem}@media (min-width:576px){.portfolio{margin-bottom:-30px}
 .portfolio .portfolio-item{margin-bottom:30px}}

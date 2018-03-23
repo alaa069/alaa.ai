@@ -1,0 +1,35 @@
+{
+  "name": "KawaiiUI",
+  "version": "0.2.0",
+  "description": "Kawaii UI is a web application built on top of, and for, Kawaii NLU.",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "http-proxy-middleware": "^0.17.4",
+    "jsonfile": "^3.0.1",
+    "mongoose": "^4.11.10",
+    "mongoose-auto-increment": "^5.0.1",
+    "mongoose-paginate": "^5.0.3",
+    "mongoose-times": "^0.1.0",
+    "morgan": "^1.8.2",
+    "node-webhooks": "^1.2.4",
+    "pg-promise": "^5.9.5",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.16.0",
+    "connect-livereload": "^0.6.0",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "author": "BEN JABALLAH Alaa",
+  "url": "http://",
+  "copyright": "Copyright 2017",
+  "license": "http://"
+}

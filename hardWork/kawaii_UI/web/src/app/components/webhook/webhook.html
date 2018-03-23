@@ -1,0 +1,112 @@
+<ol class="breadcrumb" breadcrumb="">
+  <li class="breadcrumb-item ng-scope active"><span>WebHook</span></li>
+</ol>
+<div class="container-fluid">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <form class="form-horizontal">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>WebHook</strong>
+                        </div>
+
+                        <div class="card-block">
+                            <p class="form-control-label" for="hf-email">
+                                Your web service will receive a POST request from Dialogflow in the form of the response to a user query 
+                                matched by intents with webhook enabled. Be sure that your web service meets all the webhook requirements.
+                            </p>
+                            <div class="form-group row">
+                                    <label class="col-md-1 form-control-label" for="hf-email">Name</label>
+                                    <div class="col-md-8">
+                                        <input type="test_text" ng-model="formData.name" class="form-control" id="" placeholder="Enter the name of webhook ..." required>
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                                <label class="col-md-1 form-control-label" for="hf-email">URL</label>
+                                <div class="col-md-8">
+                                    <input type="url" ng-model="formData.URL" class="form-control" id="" placeholder="Enter URL ..." required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-1 form-control-label" for="hf-email">BASIC AUTH</label>
+                                <div class="col-md-4">
+                                    <input type="" class="form-control" id="" ng-model="formData.username" placeholder="Enter username ...">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="test_text" class="form-control" ng-model="formData.password" id="" placeholder="Enter password ...">
+                                </div>
+                            </div>
+                            <div class="form-group row" data-ng-repeat="field in choiceSet.choices track by $index">
+                                <label class="col-md-1 form-control-label" for="hf-email">HEADERS</label>
+                                <div class="col-md-4">
+                                    <input type="test_text" ng-model="formData['key' + $index]" class="form-control" id="key" placeholder="Enter key ...">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="test_text" ng-model="formData['value' + $index]" class="form-control" id="value" placeholder="Enter value ...">
+                                </div>
+                                <button type="button" class="btn btn-default btn-sm" ng-click="removeChoice($index)" ng-show="$last">
+                                        <i class="fa fa-trash"></i> &nbsp;REMOVE
+                                </button>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-1 form-control-label" for="hf-email">Add HEADERS</label>
+                                <div class="col-md-8">
+                                    <div class="btn-group" role="group">
+                                        <!--<a class="btn btn-secondary" ng-click="addRow($index)"><i class="icon-plus"></i> &nbsp;Add HEADERS</a>-->
+                                        <button class="btn btn-default btn-sm" ng-click="addNewChoice()"><i class="icon-plus"></i> &nbsp;Add HEADERS</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-1 form-control-label" for="hf-email">Add Agent</label>
+                                <div class="col-md-4">
+                                    <select id="agent_name" ng-options="agent.agent_id as agent.agent_name for agent in agentList" ng-model="formData.agent_id" ng-change="update(formData.agent_id)" class="form-control" required>
+                                      <option value="">Please select one</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <select id="intent_name" ng-options="intent.intent_id as intent.intent_name for intent in intentList" ng-model="formData.intent_id" class="form-control" required>
+                                        <option value="">Please select one</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                                <button type="submit" class="btn btn-md btn-primary" ng-click="addwebhook()"><i class="fa fa-dot-circle-o"></i> Save</button>
+                        </div>
+                        <div class="card-block">
+                            <table class="table table-bordered" ng->
+                                <thead>
+                                <tr>
+                                    <!--<th>Create Date/Time</th>-->
+                                    <th>Name</th>
+                                    <th>URL</th>
+                                    <th>Delete Model</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        <!--ng-repeat="webhook in webhookList track by webhook.response_id"-->
+                                <tr ng-repeat="webhook in webhookList track by webhook.response_id">
+                                    <!--<td>{{ model.date }}</td>-->
+                                    <td>
+                                        <div class="col-md-4">{{ webhook.response_name }}</div>
+                                    </td>
+                                    <td>
+                                        <div class="col-md-4">{{ webhook.response_url }}</div>
+                                    </td>
+                                    <td>
+                                        <div class="col-md-4">
+                                            <button type="button" onclick="this.disabled=true" class="btn btn-danger" ng-click="removeWebHookl(webhook.response_id)" confirm-click="Are you sure? This will delete the WebHook."><i class="fa fa-trash"></i>&nbsp; Remove Model</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

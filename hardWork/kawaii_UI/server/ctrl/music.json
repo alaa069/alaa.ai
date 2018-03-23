@@ -1,0 +1,205 @@
+{
+  "kawaii_nlu_data": {
+    "entity_synonyms": [],
+    "common_examples": [
+      {
+        "intent": "music.download",
+        "text": "download Yesterday song by The Beatles",
+        "entities": [
+          {
+            "start": 9,
+            "end": 18,
+            "value": "Yesterday",
+            "entity": "songName",
+            "entity_id": 14
+          },
+          {
+            "start": 27,
+            "end": 38,
+            "value": "The Beatles",
+            "entity": "Artist",
+            "entity_id": 15
+          }
+        ]
+      },
+      {
+        "intent": "music.download",
+        "text": "download Madonna's album of 2016",
+        "entities": [
+          {
+            "start": 28,
+            "end": 32,
+            "value": "2016",
+            "entity": "start-year",
+            "entity_id": 16
+          },
+          {
+            "start": 9,
+            "end": 16,
+            "value": "Madonna",
+            "entity": "Artist",
+            "entity_id": 15
+          }
+        ]
+      },
+      {
+        "intent": "music.download",
+        "text": "I'd like to download the album Empty Sky by Elton John",
+        "entities": [
+          {
+            "start": 44,
+            "end": 54,
+            "value": "Elton John",
+            "entity": "Artist",
+            "entity_id": 15
+          },
+          {
+            "start": 31,
+            "end": 40,
+            "value": "Empty Sky",
+            "entity": "songName",
+            "entity_id": 14
+          }
+        ]
+      },
+      {
+        "intent": "music.download",
+        "text": "could you download the song Umbrella by Rihanna",
+        "entities": [
+          {
+            "start": 40,
+            "end": 47,
+            "value": "Rihanna",
+            "entity": "Artist",
+            "entity_id": 15
+          },
+          {
+            "start": 28,
+            "end": 36,
+            "value": "Umbrella",
+            "entity": "songName",
+            "entity_id": 14
+          }
+        ]
+      },
+      {
+        "intent": "music.download",
+        "text": "I need to download Spanish songs by Enrique Iglesias",
+        "entities": [
+          {
+            "start": 36,
+            "end": 52,
+            "value": "Enrique Iglesias",
+            "entity": "Artist",
+            "entity_id": 15
+          }
+        ]
+      },
+      {
+        "intent": "music.play",
+        "text": "play something by The Rolling Stones",
+        "entities": [
+          {
+            "start": 22,
+            "end": 36,
+            "value": "Rolling Stones",
+            "entity": "Artist",
+            "entity_id": 15
+          }
+        ]
+      },
+      {
+        "intent": "music.play",
+        "text": "play Spanish songs by Enrique Iglesias",
+        "entities": [
+          {
+            "start": 22,
+            "end": 38,
+            "value": "Enrique Iglesias",
+            "entity": "Artist",
+            "entity_id": 15
+          }
+        ]
+      },
+      {
+        "intent": "music.play",
+        "text": "I'd like to listen jazz",
+        "entities": [
+          {
+            "start": 19,
+            "end": 23,
+            "value": "jazz",
+            "entity": "genre",
+            "entity_id": 17
+          }
+        ]
+      },
+      {
+        "intent": "music.play",
+        "text": "play Empty Sky by Elton John",
+        "entities": [
+          {
+            "start": 18,
+            "end": 28,
+            "value": "Elton John",
+            "entity": "Artist",
+            "entity_id": 15
+          },
+          {
+            "start": 5,
+            "end": 14,
+            "value": "Empty Sky",
+            "entity": "songName",
+            "entity_id": 14
+          }
+        ]
+      },
+      {
+        "intent": "music.play",
+        "text": "play an album by Madonna",
+        "entities": [
+          {
+            "start": 17,
+            "end": 24,
+            "value": "Madonna",
+            "entity": "Artist",
+            "entity_id": 15
+          }
+        ]
+      },
+      {
+        "intent": "music.play",
+        "text": "now rock",
+        "entities": [
+          {
+            "start": 4,
+            "end": 8,
+            "value": "rock",
+            "entity": "genre",
+            "entity_id": 17
+          }
+        ]
+      },
+      {
+        "intent": "music.play",
+        "text": "play Rihanna's album of 2016",
+        "entities": [
+          {
+            "start": 24,
+            "end": 28,
+            "value": "2016",
+            "entity": "start-year",
+            "entity_id": 16
+          },
+          {
+            "start": 5,
+            "end": 14,
+            "value": "Rihanna's",
+            "entity": "Artist",
+            "entity_id": 15
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+.callout{
+    background-color: rgba(0, 0, 0, 0.14901960784313725);
+}
+.chat-margin{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.btn-go{
+    background-color: #7373733d !important;
+}

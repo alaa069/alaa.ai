@@ -20,7 +20,7 @@ router.get("/user", function(req, res){
 })
 
 router.post("/user", function(req, res){
-    var user = req.body.user;
+    var user = req.body;
     var setUser = {};
     setUser.FirstName = user.FirstName ? user.FirstName : '';
     setUser.LastName = user.LastName ? user.LastName : '';
@@ -55,6 +55,39 @@ router.delete("/user", function(req, res){
     }, function(err) {
         res.status(200).json({message: { code: err.code, index: err.index, errmsg: err}, error: true})
     }) 
+})
+
+router.post("/signin", function(req, res){
+    var user = req.body;
+    var setUser = {};
+    if(user.Username) setUser.Username = user.Username; else {res.status(200).json({message: 'Username is required', error: false}); return;}
+    if(user.Password) setUser.Password = user.Password; else {res.status(200).json({message: 'Password is required', error: false}); return;}
+    var status = UsersCTRL.signIn(req, user.Username, user.Password);
+    status.then(function(result){
+        //res.status(200).json({login: true, error: false, result: result})
+        res.redirect("/dashboard")
+    }, function(err){
+        res.status(200).json({login: false, error: true, err: err})
+    })
+})
+
+router.post("/signup", function(req, res){
+    var user = req.body;
+    var setUser = {};
+    setUser.FirstName = user.FirstName ? user.FirstName : '';
+    setUser.LastName = user.LastName ? user.LastName : '';
+    setUser.FullName = (user.FirstName && user.LastName) ? user.FirstName + " " + user.LastName : '';
+    if(user.Username) setUser.Username = user.Username;
+    else {res.status(200).json({message: 'Username is required', error: false}); return;}
+    if(user.Mail) setUser.Mail = user.Mail; else {res.status(200).json({message: 'Mail is required', error: false}); return;}
+    if(user.Password) setUser.Password = user.Password; else {res.status(200).json({message: 'Password is required', error: false}); return;}
+    var status = UsersCTRL.signUp(req, setUser);
+    status.then(function(result){
+        //res.status(200).json({login: true, error: false, result: result})
+        res.redirect("/dashboard")
+    }, function(err){
+        res.status(200).json({login: false, error: true, err: err})
+    })
 })
 
 module.exports = router;

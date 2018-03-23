@@ -63,7 +63,7 @@ var User = {
         return new Promise(function (resolve, reject) {
             UsersDB.findById(id, function (err, doc) {
                 if (err) reject(err);
-                if(!doc) reject('user not exist')
+                if (!doc) reject('user not exist')
                 else {
                     doc = user;
                     doc.save(function (err) {
@@ -79,7 +79,7 @@ var User = {
         return new Promise(function (resolve, reject) {
             UsersDB.findOne({ Username: username }, function (err, doc) {
                 if (err) reject(err);
-                if(!doc) reject('user not exist')
+                if (!doc) reject('user not exist')
                 else {
                     user.FirstName ? doc.FirstName = user.FirstName : doc.FirstName = doc.FirstName
                     user.LastName ? doc.LastName = user.LastName : doc.LastName = doc.LastName
@@ -100,7 +100,7 @@ var User = {
         return new Promise(function (resolve, reject) {
             UsersDB.findOne({ Mail: mail }, function (err, doc) {
                 if (err) reject(err);
-                if(!doc) reject('user not exist')
+                if (!doc) reject('user not exist')
                 else {
                     doc = user;
                     doc.save(function (err) {
@@ -116,7 +116,7 @@ var User = {
         return new Promise(function (resolve, reject) {
             UsersDB.findOneAndRemove({ id: id }, function (err, doc) {
                 if (err) reject(err);
-                if(!doc) reject('user not exist')
+                if (!doc) reject('user not exist')
                 else {
                     resolve(true)
                 }
@@ -127,7 +127,7 @@ var User = {
         return new Promise(function (resolve, reject) {
             UsersDB.findOneAndRemove({ Username: username }, function (err, doc) {
                 if (err) reject(err);
-                if(!doc) reject('user not exist')
+                if (!doc) reject('user not exist')
                 else {
                     resolve(true)
                 }
@@ -138,8 +138,55 @@ var User = {
         return new Promise(function (resolve, reject) {
             UsersDB.findOneAndRemove({ Mail: mail }, function (err, doc) {
                 if (err) reject(err);
-                if(!doc) reject('user not exist')
+                if (!doc) reject('user not exist')
                 else {
+                    resolve(true)
+                }
+            })
+        })
+    },
+    signIn: function (req, username, password) {
+        return new Promise(function (resolve, reject) {
+            req.session.reset();
+            UsersDB.findOne({ Username: username }, '_id FirstName LastName FullName Username Mail Password', function (err, doc) {
+                if (err) reject(err)
+                else if (!doc) reject('User not exist in our System');
+                else {
+                    doc.comparePassword(password, function (error, isMatch) {
+                        if (error) reject('Invalid username or password !');
+                        else if (!isMatch) reject('Invalid username or password !');
+                        else {
+                            req.session.user = doc;
+                            resolve(true);
+                        }
+                    })
+                }
+            })
+        })
+    },
+    signUp: function (req, user) {
+        return new Promise(function (resolve, reject) {
+            req.session.reset();
+            var newUser = new UsersDB({
+                FirstName: user.FirstName,
+                LastName: user.LastName,
+                FullName: user.FullName,
+                Username: user.Username,
+                Mail: user.Mail,
+                Password: user.Password,
+                PasswordView: user.Password
+            });
+            newUser.save(function(err, doc){
+                if (err) reject('Username or Mail exist in our system!')
+                else {
+                    req.session.user = {}
+                    req.session.user._id = doc._id
+                    req.session.user.FirstName = doc.FirstName
+                    req.session.user.LastName = doc.LastName
+                    req.session.user.FullName = doc.FullName
+                    req.session.user.Username = doc.Username
+                    req.session.user.Mail = doc.Mail
+                    req.session.user.Password = doc.Password
                     resolve(true)
                 }
             })

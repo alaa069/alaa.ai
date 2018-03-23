@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="loginCore">
 
 <head>
 
     <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="76x76" href="/logo/favicon.png" />
+    <link rel="icon" type="image/png" href="/logo/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Alaa BEN JABALLAH">
 
     <title>Welcome in Alaa.ai</title>
 
@@ -24,10 +26,17 @@
 
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>-->
+    <script src="/client/controllers/loginController.js"></script> <!-- load up our controller -->
+    <script src="/client/services/loginService.js"></script> <!-- load our service -->
+    <script src="/client/core.js"></script> <!-- load our main application -->
 
 </head>
 
-<body id="page-top">
+<body id="page-top" ng-controller="mainController">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
@@ -43,7 +52,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Service</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
@@ -64,7 +73,7 @@
             <hr class="star-light">
             <h2 class="font-weight-light mb-0">Build natural and rich conversational experiences</h2>
             <div class="font-weight-light mb-0">
-                <button type="button" class="btn btn-primary btn-lg" id="loginButton">Sign In / Sign Up</button>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login-modal">Sign In / Sign Up</button>
             </div>
         </div>
     </header>
@@ -72,7 +81,7 @@
     <!-- Portfolio Grid Section -->
     <section class="portfolio" id="portfolio">
         <div class="container">
-            <h2 class="text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+            <h2 class="text-center text-uppercase text-secondary mb-0">Service</h2>
             <hr class="star-dark mb-5">
             <div class="row">
                 <div class="col-md-6 col-lg-6">
@@ -162,20 +171,21 @@
             <hr class="star-light mb-5">
             <div class="row">
                 <div class="col-lg-4 ml-auto">
-                    <p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source
-                        files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                    <p class="lead">Alaa.ai was born in 2018 with the goal to make bot-building easy for anyone. 
+                        Today we're focusing mainly on making it easy for everyone to build chatbots on Facebook Messenger, 
+                        where our users include NFL and NBA teams, publishers like TechCrunch and Forbes, and millions of others.</p>
                 </div>
                 <div class="col-lg-4 mr-auto">
-                    <p class="lead">Whether you're a student looking to showcase your work, a professional looking to attract clients, or
-                        a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                    <p class="lead">We believe in the power of chatbots to strengthen your connection to your audience—whether that's your customers, 
+                        readers, fans, or others. And we're committed to making that as easy as we can.</p>
                 </div>
             </div>
-            <div class="text-center mt-4">
+            <!--<div class="text-center mt-4">
                 <a class="btn btn-xl btn-outline-light" href="#">
                     <i class="fa fa-download mr-2"></i>
                     Download Now!
                 </a>
-            </div>
+            </div>-->
         </div>
     </section>
 
@@ -278,7 +288,7 @@
 
     <div class="copyright py-4 text-center text-white">
         <div class="container">
-            <small>Copyright &copy; Your Website 2018</small>
+            <small>Copyright &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Alaa</small>
         </div>
     </div>
 
@@ -435,28 +445,96 @@
         </div>
     </div>
 
-    <!-- The login modal. Don't display it initially -->
-<form id="loginForm" method="post" class="form-horizontal" style="display: none;">
-        <div class="form-group">
-            <label class="col-xs-3 control-label">Username</label>
-            <div class="col-xs-5">
-                <input type="text" class="form-control" name="username" />
+    <!-- BEGIN # MODAL LOGIN -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" align="center">
+                    <img class="img-circle" id="" src="/logo/logo.png">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </div>
+
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+                        <div class="modal-body">
+
+                            <div id="div-login-msg">
+
+                            </div>
+                            <!--<div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">Type your username and password.</span>
+                            </div>-->
+                            <input id="login_username" class="form-control" type="text" ng-model="formData.Username" placeholder="Username" required>
+                            <input id="login_password" class="form-control" type="password" ng-model="formData.Password" placeholder="Password" required>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <button type="submit" class="btn btn-primary-log btn-block btn-4" ng-click="signIn()">Sign In</button><!-- ng-click="postPis()" -->
+                            </div>
+                            <div class="text-center color-black">
+                                <!--<button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>-->
+                                Click here for
+                                <button id="login_register_btn" type="button" class="btn btn-link">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End # Login Form -->
+
+                    <!-- Begin | Lost Password Form -->
+                    <form id="lost-form" style="display:none;">
+                        <div class="modal-body">
+                            <input id="lost_email" class="form-control" type="text" placeholder="Mail" required>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <button type="submit" class="btn btn-primary-log btn-block">Send</button>
+                            </div>
+                            <div class="text-center">
+                                <button id="lost_login_btn" type="button" class="btn btn-link">Sign In</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+
+                    <!-- Begin | Register Form -->
+                    <form id="register-form" style="display:none;">
+                        <div id="div-register-msg">
+
+                        </div>
+                        <div class="modal-body">
+                            <input id="register_firstname" class="form-control" ng-model="formData.FirstName" type="text" placeholder="FirstName" required>
+                            <input id="register_lastname" class="form-control" ng-model="formData.LastName" type="text" placeholder="LastName" required>
+                            <input id="register_username" class="form-control" ng-model="formData.Username" type="text" placeholder="Username" required>
+                            <input id="register_email" class="form-control" ng-model="formData.Mail" type="text" placeholder="Mail" required>
+                            <input id="register_password" class="form-control" ng-model="formData.Password" type="password" placeholder="Password" required>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <button type="submit" class="btn btn-primary-log btn-block btn-4" ng-click="signUp()">Sign Up</button><!-- ng-click="postPis()" -->
+                            </div>
+                            <div class="text-center color-black">
+                                Cilck here for
+                                <button id="register_login_btn" type="button" class="btn btn-link">Sign In</button>
+                                <!--<button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>-->
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End | Register Form -->
+
+                </div>
+                <!-- End # DIV Form -->
+
             </div>
         </div>
-    
-        <div class="form-group">
-            <label class="col-xs-3 control-label">Password</label>
-            <div class="col-xs-5">
-                <input type="password" class="form-control" name="password" />
-            </div>
-        </div>
-    
-        <div class="form-group">
-            <div class="col-xs-5 col-xs-offset-3">
-                <button type="submit" class="btn btn-default">Login</button>
-            </div>
-        </div>
-    </form>
+    </div>
+    <!-- END # MODAL LOGIN -->
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

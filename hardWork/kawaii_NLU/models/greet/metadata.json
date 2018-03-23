@@ -1,0 +1,68 @@
+{
+    "language": "en",
+    "pipeline": [
+        "nlp_spacy",
+        "nlp_mitie",
+        "tokenizer_whitespace",
+        "tokenizer_mitie",
+        "tokenizer_spacy",
+        "intent_featurizer_mitie",
+        "intent_featurizer_spacy",
+        "intent_featurizer_ngrams",
+        "intent_entity_featurizer_regex",
+        "ner_mitie",
+        "ner_crf",
+        "ner_spacy",
+        "ner_duckling",
+        "ner_synonyms",
+        "intent_classifier_keyword",
+        "intent_classifier_sklearn",
+        "intent_classifier_mitie"
+    ],
+    "training_data": "training_data.json",
+    "spacy_model_name": "en",
+    "mitie_feature_extractor_fingerprint": 10023965992282753551,
+    "mitie_file": "MITIE-models/english/total_word_feature_extractor.dat",
+    "ngram_featurizer": "ngram_featurizer.pkl",
+    "regex_featurizer": null,
+    "entity_extractor_mitie": "entity_extractor.dat",
+    "entity_extractor_crf": {
+        "model_file": "crf_model.pkl",
+        "crf_features": [
+            [
+                "low",
+                "title",
+                "upper",
+                "pos",
+                "pos2"
+            ],
+            [
+                "bias",
+                "low",
+                "word3",
+                "word2",
+                "upper",
+                "title",
+                "digit",
+                "pos",
+                "pos2",
+                "pattern"
+            ],
+            [
+                "low",
+                "title",
+                "upper",
+                "pos",
+                "pos2"
+            ]
+        ],
+        "BILOU_flag": true,
+        "version": 1
+    },
+    "ner_duckling_persisted": "ner_duckling.json",
+    "entity_synonyms": null,
+    "intent_classifier_sklearn": "intent_classifier.pkl",
+    "intent_classifier_mitie": "intent_classifier.dat",
+    "trained_at": "20180323-113412",
+    "kawaii_nlu_version": "0.0.01"
+}

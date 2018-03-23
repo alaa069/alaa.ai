@@ -1,0 +1,14 @@
+{
+    "development": {
+        "kawaiiserver": "http://localhost:5000",
+        "postgresConnectionString": "postgres://postgres:admin@localhost/rasaui",
+        "_postgresConnectionString": "postgres://localhost/rasaui",
+        "DataBaseMongo"    : "mongodb://localhost/rasaui"
+    },
+    "production": {
+        "kawaiiserver": "http://localhost:5000",
+        "postgresConnectionString": "postgres://postgres:admin@localhost/kawaiiui",
+        "_postgresConnectionString": "postgres://localhost/kawaiiui",
+        "DataBaseMongo"    : "mongodb://localhost/kawaiiui"
+    }
+}

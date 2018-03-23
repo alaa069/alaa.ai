@@ -1,0 +1,259 @@
+{
+  "kawaii_nlu_data": {
+    "entity_synonyms": [],
+    "common_examples": [
+      {
+        "intent": "weather",
+        "text": "weather in Paris",
+        "entities": [
+          {
+            "start": 11,
+            "end": 16,
+            "value": "Paris",
+            "entity": "address",
+            "entity_id": 10
+          }
+        ]
+      },
+      {
+        "intent": "weather",
+        "text": "show me weather for today",
+        "entities": [
+          {
+            "start": 20,
+            "end": 25,
+            "value": "today",
+            "entity": "day",
+            "entity_id": 11
+          }
+        ]
+      },
+      {
+        "intent": "weather",
+        "text": "weather Durban",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "Durban",
+            "entity": "address",
+            "entity_id": 10
+          }
+        ]
+      },
+      {
+        "intent": "weather",
+        "text": "what is the weather in Cape Town",
+        "entities": [
+          {
+            "start": 23,
+            "end": 32,
+            "value": "Cape Town",
+            "entity": "address",
+            "entity_id": 10
+          }
+        ]
+      },
+      {
+        "intent": "weather",
+        "text": "weather in London in 5 days",
+        "entities": [
+          {
+            "start": 21,
+            "end": 27,
+            "value": "5 days",
+            "entity": "day",
+            "entity_id": 11
+          },
+          {
+            "start": 11,
+            "end": 17,
+            "value": "London",
+            "entity": "address",
+            "entity_id": 10
+          }
+        ]
+      },
+      {
+        "intent": "weather",
+        "text": "what is the weather tomorrow in Campbell",
+        "entities": [
+          {
+            "start": 32,
+            "end": 40,
+            "value": "Campbell",
+            "entity": "address",
+            "entity_id": 10
+          },
+          {
+            "start": 20,
+            "end": 28,
+            "value": "tomorrow",
+            "entity": "day",
+            "entity_id": 11
+          }
+        ]
+      },
+      {
+        "intent": "weather.temperature",
+        "text": "show me the temperature in Paris in Fahrenheit",
+        "entities": [
+          {
+            "start": 36,
+            "end": 46,
+            "value": "Fahrenheit",
+            "entity": "unit",
+            "entity_id": 13
+          },
+          {
+            "start": 27,
+            "end": 32,
+            "value": "Paris",
+            "entity": "address",
+            "entity_id": 10
+          }
+        ]
+      },
+      {
+        "intent": "weather.temperature",
+        "text": "at New York is there cold",
+        "entities": [
+          {
+            "start": 21,
+            "end": 25,
+            "value": "cold",
+            "entity": "temperature",
+            "entity_id": 12
+          },
+          {
+            "start": 3,
+            "end": 11,
+            "value": "New York",
+            "entity": "address",
+            "entity_id": 10
+          }
+        ]
+      },
+      {
+        "intent": "weather.temperature",
+        "text": "what is the temperature tomorrow in Campbell",
+        "entities": [
+          {
+            "start": 36,
+            "end": 44,
+            "value": "Campbell",
+            "entity": "address",
+            "entity_id": 10
+          },
+          {
+            "start": 24,
+            "end": 32,
+            "value": "tomorrow",
+            "entity": "day",
+            "entity_id": 11
+          }
+        ]
+      },
+      {
+        "intent": "weather.temperature",
+        "text": "is today a hot day",
+        "entities": [
+          {
+            "start": 11,
+            "end": 14,
+            "value": "hot",
+            "entity": "temperature",
+            "entity_id": 12
+          },
+          {
+            "start": 3,
+            "end": 8,
+            "value": "today",
+            "entity": "day",
+            "entity_id": 11
+          }
+        ]
+      },
+      {
+        "intent": "weather.address",
+        "text": "what about Princeton tomorrow",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "tomorrow",
+            "entity": "day",
+            "entity_id": 11
+          },
+          {
+            "start": 11,
+            "end": 20,
+            "value": "Princeton",
+            "entity": "address",
+            "entity_id": 10
+          }
+        ]
+      },
+      {
+        "intent": "weather.address",
+        "text": "in Moscow this weekend",
+        "entities": [
+          {
+            "start": 15,
+            "end": 22,
+            "value": "weekend",
+            "entity": "day",
+            "entity_id": 11
+          },
+          {
+            "start": 3,
+            "end": 9,
+            "value": "Moscow",
+            "entity": "address",
+            "entity_id": 10
+          }
+        ]
+      },
+      {
+        "intent": "weather.address",
+        "text": "tomorrow in Madrid",
+        "entities": [
+          {
+            "start": 12,
+            "end": 18,
+            "value": "Madrid",
+            "entity": "address",
+            "entity_id": 10
+          },
+          {
+            "start": 0,
+            "end": 8,
+            "value": "tomorrow",
+            "entity": "day",
+            "entity_id": 11
+          }
+        ]
+      },
+      {
+        "intent": "weather.address",
+        "text": "what about Paris next Friday",
+        "entities": [
+          {
+            "start": 22,
+            "end": 28,
+            "value": "Friday",
+            "entity": "day",
+            "entity_id": 11
+          },
+          {
+            "start": 11,
+            "end": 16,
+            "value": "Paris",
+            "entity": "address",
+            "entity_id": 10
+          }
+        ]
+      }
+    ]
+  }
+}

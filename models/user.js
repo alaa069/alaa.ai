@@ -27,6 +27,7 @@ var userSchema = new Schema({
     Password: { type: String, required: true },
     PasswordView: { type: String },
     TypeUser: { type: String, enum: enumUser, default: 'user' },
+    validMail: { type: Boolean, default: false },
     Token: token
 });
 

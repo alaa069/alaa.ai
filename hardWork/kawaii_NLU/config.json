@@ -1,0 +1,22 @@
+{
+    "name": "Kawaii",
+    "language": "en",
+    "pipeline": "all_components",
+    "mitie_file": "MITIE-models/english/total_word_feature_extractor.dat",
+    "path": "models",
+    "response_log": "logs",
+    "spacy_model_name": null,
+    "port": 5000,
+    "server_model_dirs": {},
+    "ner_crf": {
+        "BILOU_flag": true,
+        "features": [
+            [ "low", "title", "upper", "pos", "pos2" ],
+            [ "bias", "low", "word3", "word2", "upper", "title", "digit", "pos", "pos2", "pattern" ],
+            [ "low", "title", "upper", "pos", "pos2" ]
+        ],
+        "max_iterations": 50,
+        "L1_c": 1,
+        "L2_c": 1e-3
+    }
+}

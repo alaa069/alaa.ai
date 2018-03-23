@@ -1,0 +1,51 @@
+{
+  "kawaii_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "hello",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "hello",
+            "entity": "Hello",
+            "entity_id": 1
+          }
+        ],
+        "text": "hello"
+      },
+      {
+        "intent": "hello",
+        "entities": [],
+        "text": "hi"
+      },
+      {
+        "intent": "hello",
+        "entities": [],
+        "text": "how are you"
+      },
+      {
+        "intent": "bye",
+        "entities": [],
+        "text": "goodBye"
+      },
+      {
+        "intent": "bye",
+        "entities": [],
+        "text": "bye"
+      },
+      {
+        "intent": "bye",
+        "entities": [],
+        "text": "bye bye"
+      },
+      {
+        "intent": "bye",
+        "entities": [],
+        "text": "good bye"
+      }
+    ],
+    "regex_features": [],
+    "entity_synonyms": []
+  }
+}

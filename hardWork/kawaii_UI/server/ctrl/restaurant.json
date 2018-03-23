@@ -1,0 +1,265 @@
+{
+  "kawaii_nlu_data": {
+    "entity_synonyms": [
+      {
+        "value": "chinese",
+        "synonyms": [
+          "chines",
+          "chinese"
+        ]
+      },
+      {
+        "value": "indian",
+        "synonyms": [
+          "indian",
+          "india",
+          "hend"
+        ]
+      }
+    ],
+    "common_examples": [
+      {
+        "intent": "restaurant_search",
+        "text": "i'm looking for a place to eat",
+        "entities": []
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "I want to grab lunch",
+        "entities": []
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "I am searching for a dinner spot",
+        "entities": []
+      },
+      {
+        "intent": "restaurant_search_location",
+        "text": "i'm looking for a place in the north of town",
+        "entities": [
+          {
+            "start": 31,
+            "end": 36,
+            "value": "north",
+            "entity": "restaurant_search_location",
+            "entity_id": 5
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_location",
+        "text": "show me a mexican place in the centre",
+        "entities": [
+          {
+            "start": 31,
+            "end": 37,
+            "value": "centre",
+            "entity": "restaurant_search_location",
+            "entity_id": 5
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_location",
+        "text": "anywhere in the west",
+        "entities": [
+          {
+            "start": 16,
+            "end": 20,
+            "value": "west",
+            "entity": "restaurant_search_location",
+            "entity_id": 5
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_location",
+        "text": "central indian restaurant",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "indian",
+            "entity": "restaurant_search_cuisine",
+            "entity_id": 6
+          },
+          {
+            "start": 0,
+            "end": 7,
+            "value": "central",
+            "entity": "restaurant_search_location"
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_location",
+        "text": "central india restaurant",
+        "entities": [
+          {
+            "start": 8,
+            "end": 13,
+            "value": "indian",
+            "entity": "restaurant_search_cuisine",
+            "entity_id": 6
+          },
+          {
+            "start": 0,
+            "end": 7,
+            "value": "central",
+            "entity": "restaurant_search_location"
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_location",
+        "text": "central hend restaurant",
+        "entities": [
+          {
+            "start": 8,
+            "end": 12,
+            "value": "indian",
+            "entity": "restaurant_search_cuisine",
+            "entity_id": 6
+          },
+          {
+            "start": 0,
+            "end": 7,
+            "value": "central",
+            "entity": "restaurant_search_location"
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_location",
+        "text": "central indian restaurant",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "central",
+            "entity": "restaurant_search_location",
+            "entity_id": 5
+          },
+          {
+            "start": 8,
+            "end": 14,
+            "value": "indian",
+            "entity": "restaurant_search_cuisine",
+            "entity_id": 6
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_cuisine",
+        "text": "show me chines restaurants",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "chinese",
+            "entity": "restaurant_search_cuisine",
+            "entity_id": 6
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_cuisine",
+        "text": "show me chinese restaurants",
+        "entities": [
+          {
+            "start": 8,
+            "end": 15,
+            "value": "chinese",
+            "entity": "restaurant_search_cuisine",
+            "entity_id": 6
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_cuisine",
+        "text": "show me chinese restaurants",
+        "entities": [
+          {
+            "start": 8,
+            "end": 15,
+            "value": "chinese",
+            "entity": "restaurant_search_cuisine",
+            "entity_id": 6
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_cuisine",
+        "text": "show me chines restaurants",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "chines",
+            "entity": "restaurant_search_cuisine",
+            "entity_id": 6
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_cuisine",
+        "text": "show me a mexican place in the centre",
+        "entities": [
+          {
+            "start": 31,
+            "end": 37,
+            "value": "centre",
+            "entity": "restaurant_search_location",
+            "entity_id": 5
+          },
+          {
+            "start": 10,
+            "end": 17,
+            "value": "mexican",
+            "entity": "restaurant_search_cuisine",
+            "entity_id": 6
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_cuisine",
+        "text": "i am looking for an indian spot called olaolaolaolaolaola",
+        "entities": [
+          {
+            "start": 20,
+            "end": 26,
+            "value": "indian",
+            "entity": "restaurant_search_location",
+            "entity_id": 5
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_cuisine",
+        "text": "I am looking for asian fusion food",
+        "entities": [
+          {
+            "start": 17,
+            "end": 29,
+            "value": "asian fusion",
+            "entity": "restaurant_search_cuisine",
+            "entity_id": 6
+          }
+        ]
+      },
+      {
+        "intent": "restaurant_search_cuisine",
+        "text": "I am looking for mexican indian fusion",
+        "entities": [
+          {
+            "start": 17,
+            "end": 38,
+            "value": "mexican indian fusion",
+            "entity": "restaurant_search_location",
+            "entity_id": 5
+          }
+        ]
+      }
+    ]
+  }
+}
